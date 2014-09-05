@@ -1,13 +1,20 @@
 {
-  "name": "SelectFx.js",
-  "version": "0.0.1",
+  "name": "selectfx.js",
+  "version": "1.0.0",
   "authors": [
     "Mibuz <contato@mibuz.com.br>"
+  ],
+  "main": [
+    "dist/selectfx.css",
+    "dist/selectfx.js"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "app/components"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
 }
