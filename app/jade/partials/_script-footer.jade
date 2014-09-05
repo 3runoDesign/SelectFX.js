@@ -1,0 +1,17 @@
+// build:js scripts/vendor.js
+// bower:js
+// endbower
+// endbuild
+
+// build:js(.tmp) selectfx.js
+script(src="selectfx.js")
+// endbuild
+script.
+  (function() {
+    var select = document.querySelectorAll('select');
+
+    [].slice.call( select ).forEach( function(el) {
+      new SelectFx(el);
+    } );
+
+  })();
