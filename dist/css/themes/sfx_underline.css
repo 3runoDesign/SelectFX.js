@@ -1,3 +1,32 @@
+.sfx-active .sfx-selected {
+  position: relative; }
+  .sfx-active .sfx-selected::before, .sfx-active .sfx-selected::after {
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    -o-transform-origin: right bottom;
+    transform-origin: right bottom;
+    speak: none;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 12px;
+    position: absolute;
+    top: 50%; }
+  .sfx-active .sfx-selected::before {
+    -webkit-transform: rotate(43deg);
+    -moz-transform: rotate(43deg);
+    -ms-transform: rotate(43deg);
+    -o-transform: rotate(43deg);
+    transform: rotate(43deg);
+    width: 5px; }
+  .sfx-active .sfx-selected::after {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg); }
+
 .sfx-underline {
   background-color: #f6f6f6;
   color: #1e1e1e; }
