@@ -8,10 +8,22 @@ script(src="selectfx.js")
 // endbuild
 script.
   (function() {
-    var select = document.querySelectorAll('select');
+    sectionOrange = document.querySelectorAll('section.orange select');
+    sectionBlue = document.querySelectorAll('section.blue select');
 
-    [].slice.call( select ).forEach( function(el) {
+
+    sectionBlueOpt = {
+      classes: {
+        styleClass: "sfx-underline"
+      }
+    };
+
+    [].slice.call( sectionOrange ).forEach( function(el) {
       new SelectFx(el);
+    } );
+
+    [].slice.call( sectionBlue ).forEach( function(el) {
+      new SelectFx(el, sectionBlueOpt);
     } );
 
   })();

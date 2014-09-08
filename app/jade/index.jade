@@ -1,26 +1,88 @@
 extends /layouts/_default
 
 block content
-  form#my_form(action="", method="post")
-    p.item
-      label(for="options") Teste
-      select#options(name="options")
-        option(value="1") Opção-1 1
-        option(value="2") Opção-1 2
-        option(value="3" selected="selected") Opção-1 3
-        option(value="4") Opção-1 4
-        option(value="5") Opção-1 5
-        option(value="6") Opção-1 6
 
-    p.item
-      label(for="options2") Teste
-      select#options2(name="options2")
-        optgroup(label="Teste")
-          option(value="1") Opção-2 1
-          option(value="2") Opção-2 2
-        optgroup(label="Teste 2")
-          option(value="3") Opção-2 3
-          option(value="4") Opção-2 4
-          option(value="5") Opção-2 5
+  section.orange
+    form(action="", method="post")
+      p.item
+        label(for="default") Select Default
+        select#default(name="options")
+          option(value="0") Acre
+          option(value="1") Alagoas
+          option(value="2") Amazonas
+          option(value="3") Amapá
+          option(value="4") Bahia
+          option(value="5") Ceará
+          option(value="6") Distrito Federal
+          option(value="7") Espírito Santo
+          option(value="8") Goiás
+          option(value="9") Maranhão
+          option(value="10") Minas Gerais
+          option(value="11") Mato Grosso do Sul
+          option(value="12") Mato Grosso
+          option(value="13") Pará
+          option(value="14") Paraíba
+          option(value="15") Pernambuco
+          option(value="16") Piauí
+          option(value="17") Paraná
+          option(value="18") Rio de Janeiro
+          option(value="19") Rio Grande do Norte
+          option(value="20") Rondônia
+          option(value="21") Roraima
+          option(value="22") Rio Grande do Sul
+          option(value="23") Santa Catarina
+          option(value="24") Sergipe
+          option(value="25") São Paulo
+          option(value="26", selected="selected") Tocantins
 
-    input(type="submit", value="Submit")
+      p.item
+        label(for="default2") Select Default - group
+        select#default2(name="options2")
+          optgroup(label="Região Norte")
+            option(value="20") Rondônia
+            option(value="0") Acre
+            option(value="26", selected="selected") Tocantins
+            option(value="13") Pará
+            option(value="2") Amazonas
+            option(value="3") Amapá
+            option(value="21") Roraima
+
+          optgroup(label="Região Nordeste")
+            option(value="1") Alagoas
+            option(value="4") Bahia
+            option(value="5") Ceará
+            option(value="9") Maranhão
+            option(value="14") Paraíba
+            option(value="15") Pernambuco
+            option(value="16") Piauí
+            option(value="19") Rio Grande do Norte
+            option(value="24") Sergipe
+
+          optgroup(label="Região Centro Oeste")
+            option(value="11") Mato Grosso do Sul
+            option(value="12") Mato Grosso
+            option(value="8") Goiás
+            option(value="6") Distrito Federal
+
+          optgroup(label="Região Sudeste")
+            option(value="25") São Paulo
+            option(value="18") Rio de Janeiro
+            option(value="7") Espírito Santo
+            option(value="10") Minas Gerais
+          optgroup(label="Região Sul")
+            option(value="17") Paraná
+            option(value="22") Rio Grande do Sul
+            option(value="23") Santa Catarina
+
+
+  section.blue
+    form(action="", method="post")
+      p.item
+        label(for="underline1") Select underline
+        select#underline1(name="underline1")
+          +options
+
+      p.item
+        label(for="underline2") Select underline - group
+        select#underline2(name="underline2")
+          +options_group

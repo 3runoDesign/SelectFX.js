@@ -1,0 +1,14 @@
+mixin options
+  - for (var i = 0; i < 7; i++)
+    -if (i > 0)
+      option(value="#{[i]}") Opção-#{[i]}
+
+mixin options_group
+  optgroup(label="Grupo 1")
+    - for (var i = 0; i < 4; i++)
+      -if (i > 0)
+        option(value="#{[i]}") Opção-#{[i]}
+
+  optgroup(label="Grupo 2")
+    - for (var i = 4; i < 7; i++)
+      option(value="#{[i]}") Opção-#{[i]}
