@@ -1,0 +1,22 @@
+%checked {
+  position: relative;
+  &::before, &::after {
+    @include transform-origin(right bottom);
+    speak: none;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 12px;
+    position: absolute;
+    top: 50%;
+  }
+
+  &::before {
+    @include transform(rotate(43deg));
+    width: 5px;
+  }
+
+  &::after {
+    @include transform(rotate(130deg));
+  }
+}

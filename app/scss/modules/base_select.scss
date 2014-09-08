@@ -1,0 +1,18 @@
+#{$baseClass} {
+  @include user-select(none);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &#{$activeClass} #{$optionsClass} {
+    visibility: visible;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,38 @@
+// Base
+$baseClass:        ".sfx-select";
+$styleClass:       ".sfx-default";
+
+// Selected
+$selectedClass:    ".sfx-selected";
+$placeholderClass: ".sfx-placeholder";
+
+// Options
+$optgroupClass:    ".sfx-optgroup";
+$optionsClass:     ".sfx-options";
+
+// Classes of actions
+$focusClass:       ".sfx-focus";
+$activeClass:      ".sfx-active";
+$mobileClass:      ".sfx-mobile";
+
+// Hide all select
+$hideAllSelect: false;
+$hideFocus: false;
+
+// Grid
+$baseLine: 32;
+
+// Color default
+$white: #f6f6f6;
+$black: #1e1e1e;
+
+$l-gray: #c4c6d1;
+$m-gray: #a8abb7;
+
+$green: #3eaf88;
+$l-green: #55cd9c;
+$m-green: #359f6e;
+$d-green: #21754b;
+
+$time_delay_options: 0.05;
+$total_options: 100;
