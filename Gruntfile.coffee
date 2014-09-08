@@ -54,6 +54,7 @@ module.exports = (grunt) ->
           dest: "<%= config.tmp %>/"
           ext: ".css"
         ]
+
     # CoffeeScript(js)
     coffee:
       options:
@@ -75,7 +76,7 @@ module.exports = (grunt) ->
       dist:
         files:
           "<%= config.tmp %>/<%= pkg.name %>" : ["<%= config.app %>/coffee/selectfx.coffee"]
-          "<%= config.tmp %>/query.<%= pkg.name %>" : ["<%= config.app %>/coffee/modules/QuerySelectFx.coffee"]
+          "<%= config.tmp %>/query_<%= pkg.name %>" : ["<%= config.app %>/coffee/modules/QuerySelectFx.coffee"]
 
     # Minification (Images and SVG)
     imagemin:
@@ -101,10 +102,31 @@ module.exports = (grunt) ->
       options:
         mangle: false
         banner: "<%= config.banner %>"
+      dist:
+        files: [
+          expand: true
+          cwd: "<%= config.dist %>"
+          src: [
+            "{,**/}*.js"
+          ]
+          dest: "<%= config.dist %>/"
+          ext: ".min.js"
+        ]
 
     cssmin:
       options:
         banner: "<%= config.banner %>"
+      dist:
+        files: [
+          expand: true
+          cwd: "<%= config.dist %>"
+          src: [
+            "{,**/}*.css"
+            "!*.min.css"
+          ]
+          dest: "<%= config.dist %>/"
+          ext: ".min.css"
+        ]
 
     concat:
       options:
@@ -152,16 +174,26 @@ module.exports = (grunt) ->
 
     # Copy
     copy:
-      dist:
+      dist_js:
         files: [
           expand: true
           dot: true
           cwd: "<%= config.tmp %>"
-          dest: "<%= config.dist %>"
+          dest: "<%= config.dist %>/js"
+          src: [
+
+            "*.js"
+          ]
+        ]
+      dist_css:
+        files: [
+          expand: true
+          dot: true
+          cwd: "<%= config.tmp %>"
+          dest: "<%= config.dist %>/css"
           src: [
             "{,**/}*.css"
             "!layout.css"
-            "*.js"
           ]
         ]
     # Taks
@@ -169,7 +201,6 @@ module.exports = (grunt) ->
       buildAll:[
         'clean'
         'sass'
-        # 'sass:themes'
         'coffee'
         'imagemin'
         'svgmin'
@@ -251,7 +282,9 @@ module.exports = (grunt) ->
     grunt.registerTask 'default', ()->
       grunt.task.run [
         'concurrent:buildAll'
-        'copy'
+        'copy:dist_js'
+        'copy:dist_css'
+        'cssmin'
       ]
 
     grunt.registerTask 'serve', ()->

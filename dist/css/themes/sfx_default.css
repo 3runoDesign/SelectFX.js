@@ -1,0 +1,55 @@
+.sfx-default {
+  background-color: #f6f6f6;
+  color: #1e1e1e; }
+  .sfx-default ul span, .sfx-default span {
+    padding: 1rem; }
+  .sfx-default > span::before, .sfx-default > span::after {
+    speak: none;
+    content: '';
+    display: block;
+    position: absolute; }
+  .sfx-default > span::before {
+    height: 100%;
+    width: 3em;
+    top: 0;
+    right: 0;
+    background-color: rgba(196, 198, 209, 0.2); }
+  .sfx-default > span::after {
+    height: 0;
+    width: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #a8abb7;
+    right: 1.1rem;
+    top: 50%; }
+  .sfx-default:focus {
+    outline: none; }
+    .sfx-default:focus li.sfx-focus {
+      background-color: #e9e9e9; }
+  .sfx-default .sfx-placeholder {
+    font-weight: 700; }
+  .sfx-default .sfx-options {
+    background-color: #f1f1f1; }
+  .sfx-default li.sfx-optgroup:hover {
+    background-color: transparent !important; }
+  .sfx-default li.sfx-optgroup .sfx-optgroup-title {
+    font-size: 0.75rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 900;
+    opacity: 0.45; }
+  .sfx-default li.sfx-optgroup ul li {
+    padding-left: 1em; }
+  .sfx-default.sfx-active .sfx-options {
+    visibility: visible; }
+  .sfx-default.sfx-active > span::after {
+    -webkit-transform: translateY(-50%) rotate(180deg);
+    -moz-transform: translateY(-50%) rotate(180deg);
+    -ms-transform: translateY(-50%) rotate(180deg);
+    -o-transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(180deg); }
+  .sfx-default ul li:hover, .sfx-default li.sfx-optgroup ul li:hover {
+    background-color: #e9e9e9; }
+  .sfx-default .sfx-selected span::before, .sfx-default .sfx-selected span::after {
+    background-color: #3eaf88;
+    right: 1.625rem; }

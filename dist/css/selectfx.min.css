@@ -1,0 +1,6 @@
+/*selectfx.js v1.0.0 - Improve the style of your selection. Based on from SelectInspiration - https://github.com/codrops/SelectInspiration
+    Copyright (c) 2014 Mibuz Team <contato@mibuz.com.br> - http://mibuz.com.br
+    License: MIT*/
+
+
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.sfx-select select{display:none}.sfx-select ul{list-style:none;margin:0;padding:0;width:100%}.sfx-select span{display:block;position:relative;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sfx-select{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;display:inline-block;vertical-align:middle;position:relative;text-align:left;width:100%;max-width:500px}.sfx-select:focus{outline:0}.sfx-select.sfx-active .sfx-options{visibility:visible;opacity:1}.sfx-options{position:absolute;overflow:hidden;width:100%;visibility:hidden;opacity:0;z-index:20}li.sfx-optgroup>span{cursor:default}
