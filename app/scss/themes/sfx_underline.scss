@@ -1,0 +1,101 @@
+@import "bourbon";
+@import "../settings";
+
+.sfx-underline {
+  background-color: $white;
+  color: $black;
+
+  #{$placeholderClass} {
+    border-bottom: 3px solid;
+    border-color: $l-gray;
+    font-weight: bold;
+  }
+
+  span {
+    padding: rem(($baseLine/2));
+  }
+
+  ul span {
+    @include transform(translate3d(200%,0,0));
+    @include transition (opacity 0.3s, transform 0.3s);
+    opacity: 0;
+
+    &::before {
+      @include transform(translate3d(200%,0,0));
+      @include transition (opacity 0.3s, transform 0.3s);
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $l-gray;
+    }
+  }
+
+  // Options
+  #{$optionsClass} {
+    @include transition(opacity 0.3s 0.4s, visibility 0s 0.7s);
+    background-color: darken($white, 2);
+  }
+
+  // Group
+  li#{$optgroupClass} {
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    #{$optgroupClass}-title {
+      font-size: rem(12);
+      padding-top: 0;
+      padding-bottom: 0;
+      font-weight: 900;
+      opacity: 0;
+      display: inline-block;
+      margin-top: 15px;
+
+      &::before {
+        display: none;
+      }
+    }
+    ul li {
+      padding-left: em(($baseLine/2));
+    }
+  }
+
+  // Activated
+  &#{$activeClass} {
+    #{$optionsClass} {
+      @include transition(opacity 0.3s);
+    }
+
+    ul #{$optgroupClass}-title {
+      opacity: 0.45;
+    }
+  }
+}
+
+.sfx-underline#{$activeClass} ul li span,
+.sfx-underline#{$activeClass} ul li span::before {
+  @include transform(translate3d(0%,0,0));
+  opacity: 1;
+}
+
+#{$activeClass} #{$selectedClass} {
+  @extend %checked !optional;
+
+  &::before, &::after {
+    right: rem(26);
+  }
+}
+
+@for $i from 1 through $total_options {
+  .sfx-underline li:nth-child(#{$i}) span,
+  .sfx-underline li:nth-child(#{$i}) span::before,
+  .sfx-underline#{$activeClass} ul li:nth-child(#{$i}) span,
+  .sfx-underline#{$activeClass} ul li:nth-child(#{$i}) span::before {
+    @include transition-delay(#{$time_delay_options}s);
+  }
+  $time_delay_options: $time_delay_options + 0.05;
+}

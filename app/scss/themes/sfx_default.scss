@@ -1,0 +1,96 @@
+@import "bourbon";
+@import "../settings";
+
+.sfx-default {
+  background-color: $white;
+  color: $black;
+
+  ul span, span {
+    padding: rem(($baseLine/2));
+  }
+
+  & > span {
+    &::before, &::after {
+      speak: none;
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      height: 100%;
+      width: 3em;
+      top: 0;
+      right: 0;
+      background-color: rgba($l-gray, 0.2);
+    }
+
+    &::after {
+      @include triangle(12px, $m-gray, down);
+      right: 1.1rem;
+      top: 50%;
+    }
+  }
+
+  // Focus
+  &:focus {
+    outline: none;
+
+    li#{$focusClass} {
+      background-color: darken($white, 5);
+    }
+  }
+
+  #{$placeholderClass} {
+    font-weight: 700;
+  }
+
+  // Options
+  #{$optionsClass} {
+    background-color: darken($white, 2);
+  }
+
+  // Group
+  li#{$optgroupClass} {
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    #{$optgroupClass}-title {
+      font-size: rem(12);
+      padding-top: 0;
+      padding-bottom: 0;
+      font-weight: 900;
+      opacity: 0.45;
+    }
+    ul li {
+      padding-left: em(($baseLine/2));
+    }
+  }
+
+  // Activated
+  &#{$activeClass} {
+    #{$optionsClass} {
+      visibility: visible;
+    }
+    // Arrow
+    > span::after {
+      @include transform(translateY(-50%) rotate(180deg));
+    }
+  }
+
+  // Hover
+  ul li:hover, li#{$optgroupClass} ul li:hover {
+    background-color: darken($white, 5);
+  }
+
+  #{$selectedClass} span {
+    @extend %checked !optional;
+
+    &::before, &::after {
+      background-color: $green;
+      right: rem(26);
+    }
+  }
+}
