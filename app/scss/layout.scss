@@ -1,0 +1,93 @@
+@import "bourbon";
+@import "neat";
+@import "settings";
+
+body {
+  background-color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: rem(38);
+}
+
+header {
+  padding: 80px 45px;
+}
+
+section {
+  margin: rem(25);
+  padding: rem(400) rem(($baseLine/2));
+  color: #fff;
+
+  &.orange {
+    background-color: #ef5f33;
+
+    #selectDefault, #selectDefault2 {
+      #{$optionsClass} {
+        max-height: 400px;
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  &.blue {
+    background-color: #2f8ede;
+
+    .sfx-underline {
+      background-color: transparent;
+      color: #fff;
+      font-size: rem(18);
+
+      #{$optionsClass} {
+        background-color: #2f8ede;
+      }
+
+      ul span::before {
+        background-color: darken(#2f8ede, 8);
+      }
+
+      #{$placeholderClass} {
+        border-color: darken(#2f8ede, 8);
+      }
+
+      &#{$activeClass} #{$selectedClass} {
+        &::before, &::after {
+          background-color: darken(#2f8ede, 15);
+        }
+      }
+
+
+    }
+  }
+
+  &.gray {
+    background-color: #afbdbd;
+  }
+
+  &.green {
+    background-color: #26ac7d;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: rem(48);
+  font-weight: 900;
+  color: #ef5f33;
+  span {
+    display: block;
+    font-size: 50%;
+    font-weight: 300;
+    color: darken(#ef5f33, 30);
+
+    &.small {
+      font-size: 30%;
+    }
+  }
+}
