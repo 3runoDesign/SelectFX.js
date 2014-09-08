@@ -285,6 +285,7 @@ module.exports = (grunt) ->
         'copy:dist_js'
         'copy:dist_css'
         'cssmin'
+        'uglify'
       ]
 
     grunt.registerTask 'serve', ()->
