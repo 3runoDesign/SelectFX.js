@@ -1,10 +1,18 @@
-@if $hideAllSelect {
+@if $hideAllSelect_selectfx {
   select {
     display: none;
   }
 }
 
-#{$baseClass} {
+
+#{$baseClass_selectfx} {
+  @if $hideFocus_selectfx {
+    &:focus {
+      #{$placeholderClass_selectfx} {
+        border-color: #3da3e2;
+      }
+    }
+  }
   select {
     display: none;
   }

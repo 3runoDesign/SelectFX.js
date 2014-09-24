@@ -1,6 +1,6 @@
 # SelectFX
 
-class SelectFx extends App
+class SelectFx extends BaseModules
   @options:
     onMobile:         true
 

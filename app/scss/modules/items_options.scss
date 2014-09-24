@@ -1,14 +1,15 @@
-#{$optionsClass} {
+#{$optionsClass_selectfx} {
   position: absolute;
   overflow: hidden;
   width: 100%;
   visibility: hidden;
   opacity: 0;
   z-index: 20;
+  margin-bottom: 15px;
 }
 
 // Group
-li#{$optgroupClass} {
+li#{$optgroupClass_selectfx} {
   > span {
     cursor: default;
   }

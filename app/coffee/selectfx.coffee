@@ -2,7 +2,7 @@
 
   'use strict';
 
-  #= modules/App
+  #= modules/BaseModules
   #= modules/SelectFx
 
   window.SelectFx = SelectFx;

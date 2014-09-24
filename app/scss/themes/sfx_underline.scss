@@ -3,17 +3,17 @@
 @import "../settings";
 
 .sfx-underline {
-  background-color: $white;
-  color: $black;
+  background-color: $white_selectfx;
+  color: $black_selectfx;
 
-  #{$placeholderClass} {
+  #{$placeholderClass_selectfx} {
     border-bottom: 3px solid;
-    border-color: $l-gray;
+    border-color: $l-gray_selectfx;
     font-weight: bold;
   }
 
   span {
-    padding: rem(($baseLine/2));
+    padding: rem(($baseLine_selectfx/2));
   }
 
   ul span {
@@ -30,24 +30,24 @@
       left: 0;
       height: 3px;
       width: 100%;
-      background-color: $l-gray;
+      background-color: $l-gray_selectfx;
     }
   }
 
   // Options
-  #{$optionsClass} {
+  #{$optionsClass_selectfx} {
     @include transition(opacity 0.3s 0.4s, visibility 0s 0.7s);
-    background-color: darken($white, 2);
+    background-color: darken($white_selectfx, 2);
   }
 
   // Group
-  li#{$optgroupClass} {
+  li#{$optgroupClass_selectfx} {
 
     &:hover {
       background-color: transparent !important;
     }
 
-    #{$optgroupClass}-title {
+    #{$optgroupClass_selectfx}-title {
       font-size: rem(12);
       padding-top: 0;
       padding-bottom: 0;
@@ -61,29 +61,29 @@
       }
     }
     ul li {
-      padding-left: em(($baseLine/2));
+      padding-left: em(($baseLine_selectfx/2));
     }
   }
 
   // Activated
-  &#{$activeClass} {
-    #{$optionsClass} {
+  &#{$activeClass_selectfx} {
+    #{$optionsClass_selectfx} {
       @include transition(opacity 0.3s);
     }
 
-    ul #{$optgroupClass}-title {
+    ul #{$optgroupClass_selectfx}-title {
       opacity: 0.45;
     }
   }
 }
 
-.sfx-underline#{$activeClass} ul li span,
-.sfx-underline#{$activeClass} ul li span::before {
+.sfx-underline#{$activeClass_selectfx} ul li span,
+.sfx-underline#{$activeClass_selectfx} ul li span::before {
   @include transform(translate3d(0%,0,0));
   opacity: 1;
 }
 
-#{$activeClass} #{$selectedClass} {
+#{$activeClass_selectfx} #{$selectedClass_selectfx} {
   @extend %checked !optional;
 
   &::before, &::after {
@@ -91,12 +91,12 @@
   }
 }
 
-@for $i from 1 through $total_options {
+@for $i from 1 through $total_options_selectfx {
   .sfx-underline li:nth-child(#{$i}) span,
   .sfx-underline li:nth-child(#{$i}) span::before,
-  .sfx-underline#{$activeClass} ul li:nth-child(#{$i}) span,
-  .sfx-underline#{$activeClass} ul li:nth-child(#{$i}) span::before {
-    @include transition-delay(#{$time_delay_options}s);
+  .sfx-underline#{$activeClass_selectfx} ul li:nth-child(#{$i}) span,
+  .sfx-underline#{$activeClass_selectfx} ul li:nth-child(#{$i}) span::before {
+    @include transition-delay(#{$time_delay_options_selectfx}s);
   }
-  $time_delay_options: $time_delay_options + 0.05;
+  $time_delay_options_selectfx: $time_delay_options_selectfx + 0.05;
 }

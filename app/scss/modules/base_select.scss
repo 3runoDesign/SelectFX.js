@@ -1,4 +1,4 @@
-#{$baseClass} {
+#{$baseClass_selectfx} {
   @include user-select(none);
   display: inline-block;
   vertical-align: middle;
@@ -11,7 +11,7 @@
     outline: none;
   }
 
-  &#{$activeClass} #{$optionsClass} {
+  &#{$activeClass_selectfx} #{$optionsClass_selectfx} {
     visibility: visible;
     opacity: 1;
   }

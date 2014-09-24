@@ -9,7 +9,7 @@
   # App.hasParent(elem, parent) -> true/false
 
 
-class App
+class BaseModules
   # based on from http://www.cristinawithout.com/content/function-trigger-events-javascript
   fireEvent = (obj, evt) ->
     fireOnThis = obj

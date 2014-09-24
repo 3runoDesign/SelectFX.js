@@ -29,9 +29,12 @@
 
 .sfx-default {
   background-color: #f6f6f6;
-  color: #1e1e1e; }
+  color: #1e1e1e;
+  margin-bottom: 15px;
+  max-width: 100%;
+  height: 42px; }
   .sfx-default ul span, .sfx-default span {
-    padding: 1rem; }
+    padding: 0.5rem; }
   .sfx-default > span::before, .sfx-default > span::after {
     speak: none;
     content: '';
@@ -56,9 +59,19 @@
     .sfx-default:focus li.sfx-focus {
       background-color: #e9e9e9; }
   .sfx-default .sfx-placeholder {
-    font-weight: 700; }
+    font-weight: 700;
+    height: 100%;
+    display: block;
+    border: 1px solid;
+    border-color: #c4c4c4; }
   .sfx-default .sfx-options {
-    background-color: #f1f1f1; }
+    background-color: #f1f1f1;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #c4c4c4;
+    max-height: 400px;
+    overflow-y: auto; }
   .sfx-default li.sfx-optgroup:hover {
     background-color: transparent !important; }
   .sfx-default li.sfx-optgroup .sfx-optgroup-title {
@@ -70,7 +83,8 @@
   .sfx-default li.sfx-optgroup ul li {
     padding-left: 1em; }
   .sfx-default.sfx-active .sfx-options {
-    visibility: visible; }
+    visibility: visible;
+    opacity: 1; }
   .sfx-default.sfx-active > span::after {
     -webkit-transform: translateY(-50%) rotate(180deg);
     -moz-transform: translateY(-50%) rotate(180deg);

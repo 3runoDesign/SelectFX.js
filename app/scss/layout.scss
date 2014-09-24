@@ -22,14 +22,14 @@ header {
 
 section {
   margin: rem(25);
-  padding: rem(400) rem(($baseLine/2));
+  padding: rem(400) rem(($baseLine_selectfx/2));
   color: #fff;
 
   &.orange {
     background-color: #ef5f33;
 
     #selectDefault, #selectDefault2 {
-      #{$optionsClass} {
+      #{$optionsClass_selectfx} {
         max-height: 400px;
         overflow-y: scroll;
       }
@@ -44,7 +44,7 @@ section {
       color: #fff;
       font-size: rem(18);
 
-      #{$optionsClass} {
+      #{$optionsClass_selectfx} {
         background-color: #2f8ede;
       }
 
@@ -52,11 +52,11 @@ section {
         background-color: darken(#2f8ede, 8);
       }
 
-      #{$placeholderClass} {
+      #{$placeholderClass_selectfx} {
         border-color: darken(#2f8ede, 8);
       }
 
-      &#{$activeClass} #{$selectedClass} {
+      &#{$activeClass_selectfx} #{$selectedClass_selectfx} {
         &::before, &::after {
           background-color: darken(#2f8ede, 15);
         }

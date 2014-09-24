@@ -1,38 +1,38 @@
 // Base
-$baseClass:        ".sfx-select";
-$styleClass:       ".sfx-default";
+$baseClass_selectfx:        ".sfx-select";
+$styleClass_selectfx:       ".sfx-default";
 
 // Selected
-$selectedClass:    ".sfx-selected";
-$placeholderClass: ".sfx-placeholder";
+$selectedClass_selectfx:    ".sfx-selected";
+$placeholderClass_selectfx: ".sfx-placeholder";
 
 // Options
-$optgroupClass:    ".sfx-optgroup";
-$optionsClass:     ".sfx-options";
+$optgroupClass_selectfx:    ".sfx-optgroup";
+$optionsClass_selectfx:     ".sfx-options";
 
 // Classes of actions
-$focusClass:       ".sfx-focus";
-$activeClass:      ".sfx-active";
-$mobileClass:      ".sfx-mobile";
+$focusClass_selectfx:       ".sfx-focus";
+$activeClass_selectfx:      ".sfx-active";
+$mobileClass_selectfx:      ".sfx-mobile";
 
 // Hide all select
-$hideAllSelect: false;
-$hideFocus: false;
+$hideAllSelect_selectfx: true;
+$hideFocus_selectfx: true;
 
 // Grid
-$baseLine: 32;
+$baseLine_selectfx: 32;
 
 // Color default
-$white: #f6f6f6;
-$black: #1e1e1e;
+$white_selectfx: #f6f6f6;
+$black_selectfx: #1e1e1e;
 
-$l-gray: #c4c6d1;
-$m-gray: #a8abb7;
+$l-gray_selectfx: #c4c6d1;
+$m-gray_selectfx: #a8abb7;
 
-$green: #3eaf88;
-$l-green: #55cd9c;
-$m-green: #359f6e;
-$d-green: #21754b;
+$green_selectfx: #3eaf88;
+$l-green_selectfx: #55cd9c;
+$m-green_selectfx: #359f6e;
+$d-green_selectfx: #21754b;
 
-$time_delay_options: 0.05;
-$total_options: 100;
+$time_delay_options_selectfx: 0.05;
+$total_options_selectfx: 100;

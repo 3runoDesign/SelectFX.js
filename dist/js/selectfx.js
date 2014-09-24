@@ -7,11 +7,11 @@ var __hasProp = {}.hasOwnProperty,
 
 (function(window, document) {
   'use strict';
-  var App, SelectFx;
-  App = (function() {
+  var BaseModules, SelectFx;
+  BaseModules = (function() {
     var addClass, capitaliseString, classReg, extendObjs, fireEvent, hasClass, hasParent, isMobile, removeClass, toggleClass;
 
-    function App() {}
+    function BaseModules() {}
 
     fireEvent = function(obj, evt) {
       var evObj, fireOnThis;
@@ -85,25 +85,25 @@ var __hasProp = {}.hasOwnProperty,
       return navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
     };
 
-    App.prototype.has = hasClass;
+    BaseModules.prototype.has = hasClass;
 
-    App.prototype.add = addClass;
+    BaseModules.prototype.add = addClass;
 
-    App.prototype.remove = removeClass;
+    BaseModules.prototype.remove = removeClass;
 
-    App.prototype.toggle = toggleClass;
+    BaseModules.prototype.toggle = toggleClass;
 
-    App.prototype.extend = extendObjs;
+    BaseModules.prototype.extend = extendObjs;
 
-    App.prototype.hasParent = hasParent;
+    BaseModules.prototype.hasParent = hasParent;
 
-    App.prototype.isMobile = isMobile;
+    BaseModules.prototype.isMobile = isMobile;
 
-    App.prototype.fireEvent = fireEvent;
+    BaseModules.prototype.fireEvent = fireEvent;
 
-    App.prototype.capitalise = capitaliseString;
+    BaseModules.prototype.capitalise = capitaliseString;
 
-    return App;
+    return BaseModules;
 
   })();
   SelectFx = (function(_super) {
@@ -332,6 +332,6 @@ var __hasProp = {}.hasOwnProperty,
 
     return SelectFx;
 
-  })(App);
+  })(BaseModules);
   return window.SelectFx = SelectFx;
 })(window, document);

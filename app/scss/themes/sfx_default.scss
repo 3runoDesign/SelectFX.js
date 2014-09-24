@@ -3,11 +3,14 @@
 @import "../settings";
 
 .sfx-default {
-  background-color: $white;
-  color: $black;
+  background-color: $white_selectfx;
+  color: $black_selectfx;
+  margin-bottom: 15px;
+  max-width: 100%;
+  height: 42px;
 
   ul span, span {
-    padding: rem(($baseLine/2));
+    padding: rem(($baseLine_selectfx/4));
   }
 
   & > span {
@@ -23,11 +26,11 @@
       width: 3em;
       top: 0;
       right: 0;
-      background-color: rgba($l-gray, 0.2);
+      background-color: rgba($l-gray_selectfx, 0.2);
     }
 
     &::after {
-      @include triangle(12px, $m-gray, down);
+      @include triangle(12px, $m-gray_selectfx, down);
       right: 1.1rem;
       top: 50%;
     }
@@ -37,28 +40,39 @@
   &:focus {
     outline: none;
 
-    li#{$focusClass} {
-      background-color: darken($white, 5);
+    li#{$focusClass_selectfx} {
+      background-color: darken($white_selectfx, 5);
     }
   }
 
-  #{$placeholderClass} {
+  #{$placeholderClass_selectfx} {
     font-weight: 700;
+    height: 100%;
+    display: block;
+    border: 1px solid;
+    border-color: #c4c4c4;
   }
 
   // Options
-  #{$optionsClass} {
-    background-color: darken($white, 2);
+  #{$optionsClass_selectfx} {
+    background-color: darken($white_selectfx, 2);
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #c4c4c4;
+
+    max-height: 400px;
+    overflow-y: auto;
   }
 
   // Group
-  li#{$optgroupClass} {
+  li#{$optgroupClass_selectfx} {
 
     &:hover {
       background-color: transparent !important;
     }
 
-    #{$optgroupClass}-title {
+    #{$optgroupClass_selectfx}-title {
       font-size: rem(12);
       padding-top: 0;
       padding-bottom: 0;
@@ -66,14 +80,15 @@
       opacity: 0.45;
     }
     ul li {
-      padding-left: em(($baseLine/2));
+      padding-left: em(($baseLine_selectfx/2));
     }
   }
 
   // Activated
-  &#{$activeClass} {
-    #{$optionsClass} {
+  &#{$activeClass_selectfx} {
+    #{$optionsClass_selectfx} {
       visibility: visible;
+      opacity: 1;
     }
     // Arrow
     > span::after {
@@ -82,15 +97,15 @@
   }
 
   // Hover
-  ul li:hover, li#{$optgroupClass} ul li:hover {
-    background-color: darken($white, 5);
+  ul li:hover, li#{$optgroupClass_selectfx} ul li:hover {
+    background-color: darken($white_selectfx, 5);
   }
 
-  #{$selectedClass} span {
+  #{$selectedClass_selectfx} span {
     @extend %checked !optional;
 
     &::before, &::after {
-      background-color: $green;
+      background-color: $green_selectfx;
       right: rem(26);
     }
   }
