@@ -72,6 +72,7 @@ select {
     margin: 0; }
     .sfx-select .sfx-placeholder dl dt {
       width: 56%;
+      margin: 0;
       text-overflow: ellipsis;
       overflow: hidden; }
 
