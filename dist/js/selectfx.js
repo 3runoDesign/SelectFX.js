@@ -203,7 +203,7 @@ var __hasProp = {}.hasOwnProperty,
       this.selEl.className = "" + this.options.classes.baseClass + " " + this.options.classes.styleClass;
       this.selEl.tabIndex = this.el.tabIndex;
       this.selEl.id = "select" + (this.capitalise(this.el.getAttribute('id')));
-      this.selEl.innerHTML = ("<span class=\"" + this.options.classes.placeholderClass + "\">") + this.selectedOpt.textContent + "</span>" + opts_el;
+      this.selEl.innerHTML = ("<span class=\"" + this.options.classes.placeholderClass + "\"> <dl><dt>") + this.selectedOpt.textContent + "</dl></dt></span>" + opts_el;
       this.el.parentNode.appendChild(this.selEl);
       return this.selEl.appendChild(this.el);
     };
@@ -283,12 +283,12 @@ var __hasProp = {}.hasOwnProperty,
       this._removeFocus();
       if (this._isOpen()) {
         if (this.current !== -1) {
-          this.selPlaceholder.textContent = this.selOpts[this.current].textContent;
+          this.selPlaceholder.querySelector("dl dt").textContent = this.selOpts[this.current].textContent;
         }
         return this.remove(this.selEl, "" + this.options.classes.activeClass);
       } else if (!this._isOpen()) {
         if (this.hasDefaultPlaceholder && this.constructor.stickyPlaceholder) {
-          this.selPlaceholder.textContent = this.selectedOpt.textContent;
+          this.selPlaceholder.querySelector("dl dt").textContent = this.selectedOpt.textContent;
         }
         return this.add(this.selEl, "" + this.options.classes.activeClass);
       }
@@ -301,7 +301,7 @@ var __hasProp = {}.hasOwnProperty,
         this.preSelCurrent = -1;
       }
       opt = this.selOpts[this.current];
-      this.selPlaceholder.textContent = opt.textContent;
+      this.selPlaceholder.querySelector("dl dt").textContent = opt.textContent;
       this.el.value = opt.getAttribute("data-value");
       oldOpt = this.selEl.querySelector("." + this.options.classes.selectedClass);
       if (oldOpt) {

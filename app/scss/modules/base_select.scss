@@ -15,4 +15,15 @@
     visibility: visible;
     opacity: 1;
   }
+
+  #{$placeholderClass_selectfx} {
+    dl {
+      margin: 0;
+      dt {
+        width: 56%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
 }

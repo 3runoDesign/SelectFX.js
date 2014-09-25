@@ -103,7 +103,7 @@ class SelectFx extends BaseModules
     @.selEl.className = "#{@.options.classes.baseClass} #{@.options.classes.styleClass}"
     @.selEl.tabIndex = @.el.tabIndex
     @.selEl.id = "select#{@capitalise @.el.getAttribute('id')}"
-    @.selEl.innerHTML = "<span class=\"#{@.options.classes.placeholderClass}\">" + @.selectedOpt.textContent + "</span>" + opts_el
+    @.selEl.innerHTML = "<span class=\"#{@.options.classes.placeholderClass}\"> <dl><dt>" + @.selectedOpt.textContent + "</dl></dt></span>" + opts_el
     @.el.parentNode.appendChild @.selEl
     @.selEl.appendChild @.el
 
@@ -184,11 +184,11 @@ class SelectFx extends BaseModules
     @_removeFocus()
     if @_isOpen()
       # update placeholder text
-      @.selPlaceholder.textContent = @.selOpts[@.current].textContent  if @.current isnt -1
+      @.selPlaceholder.querySelector("dl dt").textContent = @.selOpts[@.current].textContent  if @.current isnt -1
       @remove @selEl, "#{@.options.classes.activeClass}"
     else if not @_isOpen()
       # everytime we open we wanna see the default placeholder text
-      @.selPlaceholder.textContent = @.selectedOpt.textContent  if @.hasDefaultPlaceholder and @constructor.stickyPlaceholder
+      @.selPlaceholder.querySelector("dl dt").textContent = @.selectedOpt.textContent  if @.hasDefaultPlaceholder and @constructor.stickyPlaceholder
       @add @.selEl, "#{@.options.classes.activeClass}"
 
   _changeOption : ->
@@ -201,7 +201,7 @@ class SelectFx extends BaseModules
     opt = @.selOpts[@.current]
 
     # update current selected value
-    @.selPlaceholder.textContent = opt.textContent
+    @.selPlaceholder.querySelector("dl dt").textContent = opt.textContent
 
     # change native select element´s value
     @.el.value = opt.getAttribute("data-value")

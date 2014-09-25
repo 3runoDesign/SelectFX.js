@@ -68,6 +68,12 @@ select {
   .sfx-select.sfx-active .sfx-options {
     visibility: visible;
     opacity: 1; }
+  .sfx-select .sfx-placeholder dl {
+    margin: 0; }
+    .sfx-select .sfx-placeholder dl dt {
+      width: 56%;
+      text-overflow: ellipsis;
+      overflow: hidden; }
 
 .sfx-options {
   position: absolute;
