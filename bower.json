@@ -5,8 +5,8 @@
     "Mibuz <contato@mibuz.com.br>"
   ],
   "main": [
-    "dist/selectfx.css",
-    "dist/selectfx.js"
+    "dist/css/selectfx.css",
+    "dist/js/selectfx.js"
   ],
   "license": "MIT",
   "ignore": [
